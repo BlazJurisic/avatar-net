@@ -91,7 +91,7 @@ class AvatarNet(object):
         styles_features = []
         for style in styles:
             style_image_features = losses.extract_image_features(
-                style, self.network_name)
+                style, self.network_name, reuse=False)
             style_features = losses.compute_content_features(
                 style_image_features, self.style_loss_layers)
             styles_features.append(style_features)
